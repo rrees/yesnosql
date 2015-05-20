@@ -1,0 +1,38 @@
+
+body {
+	font-family: 'Droid Sans';
+	background-color: snow;
+	color: darkSlateGray;
+	width: 80%;
+	margin: auto;
+	font-size: 1.2em;
+}
+
+label.following {
+	margin-left: 0.4em;
+}
+
+a {
+	color: crimson;
+}
+a:visited {
+	color: darkred;
+}
+
+.answer {
+	font-style: italic;
+	padding-left: 1em;
+}
+
+.question.results {
+	font-size: 150%;
+}
+
+.result {
+	font-weight: bold;
+	font-size: 800%;
+	margin-top: 0.3em;
+	margin-bottom: 0.4em;
+	margin-left: 0.4em;
+	padding: 0.1em;
+}

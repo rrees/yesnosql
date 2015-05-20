@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Yes or NoSQL{% endblock title %}
+
+{% block content %}
+<h1>Should I be using NoSQL?</h1>
+
+<h2>Introduction</h2>
+<p>Draw up a little ERD diagram of the normal relational schema you would create to solve this problem.</p>
+<p>Now answer the questions below for this schema. You should only answer questions that are relevant to you or your design, if it doesn't apply move right along to the next one.</p>
+
+<h2>Questions</h2>
+
+<form method="POST">
+{% for question in questions %}
+<p>{{question.question}}</p>
+<p><label>Yes <input type="radio" name="{{question.name_value}}" value="yes"/></label><label class="following">No <input type="radio" name="{{question.name_value}}" value="no"/></label></p>
+{% endfor %}
+<button type="submit">So can I use NoSql?</button>
+</form>
+{% endblock content %}

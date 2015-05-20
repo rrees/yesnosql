@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Real-world examples of NoSql{% endblock %}
+
+{% block content %}
+<h1>NoSQL in the Wild</h1>
+
+<h2>Mozilla Test Pilot Programme</h2>
+
+<p>With Firefox 4 entering Release Candidate Mozilla Labs embarked on a huge <a href="https://mozillalabs.com/testpilot/">user testing programme for the new browser</a>. Data is constantly collected from participants and consists of surveys, direct feedback as well as automatic monitoring data. The site gives daily sentiment reports and also trends by factors such as operation systems</p>
+
+<p>Mozilla Labs wrote up the <a href="http://blog.mozilla.com/data/2010/05/18/riak-and-cassandra-and-hbase-oh-my/">details of their evaluation process</a> and <a href="http://blog.mozilla.com/data/2010/08/16/benchmarking-riak-for-the-mozilla-test-pilot-project/">performance testing</a>. Their final choice was <a href="http://www.basho.com/Riak.html">Riak</a> and this probably represents the highest profile deployment of Riak to date.</p>
+
+<h2>Afghan War Logs</h2>
+
+<p>The leaking of the Afghan combat reports represents a significant milestone in crowdsourced data analysis (although the professional media services managed to provide better analysis and background).</p>
+
+<p>The original data is basically like a paper form with consistent sections but variable length content. The match to document databases is immediately apparent and it is likely that the US government originally stored them in some kind of document store. It was interesting to note that no-one seemed to use a relation store to publish or analyse the reports.</p>
+
+<p><a href="http://www.guardian.co.uk/world/datablog/interactive/2010/jul/25/afghanistan-war-logs-events">The Guardian</a> used Google App Engine which sit on BigTable, if you click through to the event log you can see the blocks of the underlying sections.</p>
+
+<p>An independent <a href="http://pollen.nymphormation.org/afgwar/_design/afgwardiary/timeline.html">CouchDb</a> version has also been created.</p>
+<p>One interesting point with this is that it was written with <a href="http://github.com/couchapp/couchapp">CouchApp</a>, a framework that allows you to write, store and serve the app in CouchDb itself which makes the store an application server as well. Oracle eat your heart out! This unusual arrangement is possible because CouchDb is based on HTTP and therefore can treat HTML and Javascript files as it would any other document and serve them to a client. If that client is a web browser it can display the page and then make subsequent calls to retrieve other JSON documents.</p>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Results{% endblock %}
+
+{%block content %}
+<h1>Your results</h1>
+
+<p class="result">{{result}}</p>
+
+<h2>Analysis</h2>
+
+{% if weak %}
+<p>This is a weak recommendation, you need to consider the detail below carefully.</p>
+{% endif %}
+
+<p>You answered yes to the following significant questions:</p>
+
+{% for question in questions_answered %}
+<p class="question results">{{question.question}}</p>
+<p class="answer">{{question.analysis}}</p>
+{% endfor %}
+
+{% if counterpoint %}
+<h2>Counterpoint</h2>
+
+<p>You also need to consider the following answers you gave that run contrary to the answer above.</p>
+
+{% for question in counterpoint %}
+<p class="question results">{{question.question}}</p>
+<p class="answer">{{question.analysis}}</p>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
+

@@ -1,1 +1,1 @@
-$GAE_SDK/appcfg.py --oauth2 update .
+$GAE_PY_SDK/appcfg.py update .

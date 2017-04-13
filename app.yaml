@@ -2,10 +2,10 @@ application: yesnosql-hrd
 version: 3
 runtime: python27
 api_version: 1
-threadsafe: false
+threadsafe: true
 
 handlers:
 - url: /stylesheets
   static_dir: static/stylesheets
 - url: .*
-  script: main.py
+  script: main.app
